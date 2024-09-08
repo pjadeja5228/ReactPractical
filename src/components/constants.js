@@ -18,6 +18,19 @@ export const ProjectEnum = {
     Status: "",
     Email: "",
 }
+export const sampleData = [
+  {
+    id: 1,
+    customer: 'John Doe',
+    refNumber: 'REF12345',
+    projectName: 'Project A',
+    projectNumber: 'P001',
+    location: 'New York',
+    address: '123 Main St, NY',
+    
+  }
+];
+
 
 export const Projectcolumns = [
   { field: 'customer', headerName: 'Customer', width: 150 },
@@ -26,24 +39,24 @@ export const Projectcolumns = [
     field: 'projectName', 
     headerName: 'Project Name', 
     width: 200, 
-    valueGetter: (params) => params.row.projectRef.projectName // Access nested object
+    // valueGetter: (params) => params.row.projectRef.projectName // Access nested object
   },
   { 
     field: 'projectNumber', 
     headerName: 'Project Number', 
     width: 150, 
-    valueGetter: (params) => params.row.projectRef.projectNumber 
+    // valueGetter: (params) => params.row.projectRef.projectNumber 
   },
   { 
     field: 'location', 
     headerName: 'Project Location', 
     width: 200, 
-    valueGetter: (params) => params.row.projectLocation.location 
+    // valueGetter: (params) => params.row.projectLocation.location 
   },
   { 
     field: 'address', 
     headerName: 'Address', 
     width: 250, 
-    valueGetter: (params) => params.row.projectLocation.address 
+    // valueGetter: (params) => params.row.projectLocation.address 
   },
 ];

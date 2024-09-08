@@ -15,7 +15,7 @@ import { DarkModeReducer, ProjectReducer, UserReducer } from './slice'
 const persistConfig = {
     key: 'root',
     storage: storage,
-    whitelist: ['Users']
+    whitelist: ['Users','Projects']
 }
 export const rootReducers = combineReducers({
     Token: null,

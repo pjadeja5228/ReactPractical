@@ -1,7 +1,7 @@
 import {  Button, Card, CardContent, Grid, TextField, Typography,  } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { DataGrid } from '@mui/x-data-grid';
-import { Projectcolumns } from '../components/constants';
+import { Projectcolumns, sampleData } from '../components/constants';
 import { useState } from 'react';
 import { checkPropTypes } from 'prop-types';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -247,6 +247,17 @@ AddProject.propTypes = {
     Cancel: checkPropTypes.func,
 };
 const Containt = () => {
+    const projectList = useSelector((state) => state.Projects.ProjectList);
+    const rows = projectList.map((item, index) => ({
+        id: index,
+        customer: item.Customer,
+        refNumber: item.RefranceNumber,
+        projectName: item.ProjectName,
+        projectNumber: item.ProjectNumber,
+        location: item.Location,
+        address: item.Address,
+    }));
+      
     return (
         <CardContent>
             <Typography variant="h6" gutterBottom>
@@ -254,7 +265,7 @@ const Containt = () => {
 
             </Typography>
             <div style={{ height: 400, width: '100%' }}>
-                <DataGrid rows={[]} columns={Projectcolumns} pageSize={5} />
+                <DataGrid rows={rows} columns={Projectcolumns} pageSize={5} />
             </div>
         </CardContent>
     );
